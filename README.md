@@ -26,9 +26,9 @@ then it must have a reset word of length no larger than (n-1)^2.
 (The word length is the number of letters in the word, counting repetitions.
 For example, the word f(g(g(g(f(x))))) has length 5.)
 
-To search for counter-examples, the program looks in the free algebra for
+To search for counterexamples, the program looks in the free algebra for
 constant terms of shortest length and if it finds an example where the shortest
-length constant term is greater than (n-1)^2, this is a counter-example.
+length constant term is greater than (n-1)^2, this is a counterexample.
 
 So far I have run the program for n=3 up to n=6 states and, as expected, 
 found no violation of the Czerny conjecture.  I am currently running it on larger 
@@ -40,22 +40,23 @@ Other Notes
 -----------
 The Czerny Conjecture is a statement about all finite automata, even those
 with more than two letters.  So, while this program might be able to find a
-counter-example, it will not verify the Czerny Conjecture for a given n (since
+counterexample, it will not verify the Czerny Conjecture for a given n (since
 we're only checking automata with two letters). Of course, the code could be
 modified to use more letters. 
 
 
 Possible Improvements
 ---------------------
-It's possible we could use Freese's thinning method to eliminate some
-coordinates and compute the free algebra much faster, and yet still be able to 
-test for counterexamples.  On the other hand, I suspect that speeding up the
-free algebra computation will not result in major gains, since the real problem
-is that the number of pairs of unary maps on n grows exponentially, so even if the
-algorithm does nothing inside the loop, it will take a long time for large n.  
+Perhaps it is possible to could use Freese's thinning method to eliminate some
+coordinates and compute the free algebra faster, and yet still be able to 
+test for counterexamples.  I haven't given much thought to whether this would
+work because I suspect that speeding up the free algebra computation will not
+result in major gains.  The real problem is that the number of pairs of unary
+maps on n grows exponentially, so even if the algorithm does nothing inside the
+loop, it will take a long time for large n.   
 
 Probably a better way to improve the algorithm is to think of smart ways to thin
-this set of candidate pairs of unary maps.
+the set of candidate pairs of unary maps.
 
 
 Sample Output
