@@ -6,7 +6,7 @@ This repository contains some Java classes for testing the Czerny Conjecture usi
 The main program in Czerny.java takes an input n (an integer) and, for each pair of
 unary operations f and g on the set {0, 1, ..., n-1}, constructs an algebra
 consisting of an n element universe and two unary operations, f and g (i.e.,
-maps from the set {0,1,...,n-1} to itself).
+f and g are unary functions mapping the set {0,1,...,n-1} to itself).
 
 (This is equivalent to an automaton on n "states" and two "letters.")
 
