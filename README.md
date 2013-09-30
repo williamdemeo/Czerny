@@ -5,8 +5,6 @@ This repository contains some Java classes for testing the
 [Czerny Conjecture](http://en.wikipedia.org/wiki/Synchronizing_word) 
 using Ralph Freese's FreeAlgebra class.
 
-
-
 The main program in Czerny.java takes an input n (an integer) and, for each pair of
 unary operations f and g on the set {0, 1, ..., n-1}, constructs an algebra
 consisting of an n element universe and two unary operations, f and g (i.e.,
