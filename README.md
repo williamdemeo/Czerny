@@ -11,7 +11,7 @@ f and g are functions of one variable mapping the set {0,1,...,n-1} into itself)
 (This is equivalent to an automaton on n "states" and two "letters.")
 
 For each of these unary algebras, the program then constructs the free algebra on 
-one generator using Ralph Freese's FreeAlgebra constructor. The generator used
+one generator using Ralph Freese's FreeAlgebra Java class. The generator used
 is the element (0, 1, 2, ..., n-1).)   (See http://uacalc.org to learn more about
 the UACalc.) 
 
@@ -21,6 +21,7 @@ produced by an automaton on n states using the letters f and g.
 The Czerny Conjecture states that if the automaton has a "reset word"
 (i.e., is "synchronizing", i.e. the free algebra has a constant term), 
 then it must have a reset word of length no larger than (n-1)^2.  
+
 
 (The word length is the number of letters in the word, counting repetitions.
 For example, the word f(g(g(g(f(x))))) has length 5.)
@@ -34,6 +35,28 @@ found no violation of the Czerny conjecture.  I am currently running it on large
 automaton.
 
 The program also outputs the reset words for interesting (i.e. synchronizing) automata.
+
+Other Notes
+-----------
+The Czerny Conjecture is a statement about all finite automata, even those
+with more than two letters.  So, while this program might be able to find a
+counter-example, it will not verify the Czerny Conjecture for a given n (since
+we're only checking automata with two letters---of course, the code could be
+generalized to use more letters). 
+
+
+Possible Improvements
+---------------------
+It's possible we could use Freese's thinning method to eliminate some
+coordinates and compute the free algebra much faster, and yet still be able to 
+test for counterexamples.  On the other hand, I suspect that speeding up the
+free algebra computation will not result in major gains, since the real problem
+is that the number of pairs of unary maps on n grows exponentially, so even if the
+algorithm does nothing inside the loop, it will take a long time for large n.  
+
+Probably a better way to improve the algorithm is to think of smart ways to thin
+this set of candidate pairs of unary maps.
+
 
 Sample Output
 -------------
