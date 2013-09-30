@@ -41,8 +41,8 @@ Other Notes
 The Czerny Conjecture is a statement about all finite automata, even those
 with more than two letters.  So, while this program might be able to find a
 counter-example, it will not verify the Czerny Conjecture for a given n (since
-we're only checking automata with two letters---of course, the code could be
-generalized to use more letters). 
+we're only checking automata with two letters). Of course, the code could be
+modified to use more letters. 
 
 
 Possible Improvements
