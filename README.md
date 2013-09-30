@@ -60,8 +60,11 @@ this set of candidate pairs of unary maps.
 
 Sample Output
 -------------
-If you run the main() function with input n=5, this is what a small segment of
-the output looks like: 
+Below is some sample output when running the main() function with input n=5.
+The Min reset length shows the length of the smallest reset word for the current
+automaton. The MaxMin reset length stores the largest of these min reset words
+across all 5-state automata on two letters.  If the Czerny Conjecture is correct,
+this MaxMin reset length must be no larger than 16 = (5-1)^2.
 
     ======== Automaton 24899 ========
     Sep 30, 2013 6:38:56 PM org.uacalc.alg.FreeAlgebra makeUniverse
