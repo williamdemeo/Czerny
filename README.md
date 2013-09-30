@@ -1,7 +1,8 @@
 Czerny
 ======
 
-This repository contains some Java classes for testing the Czerny Conjecture using UACalc's FreeAlgebra class.
+This repository contains some Java classes for testing the Czerny Conjecture
+using Ralph Freese's FreeAlgebra class.
 
 The main program in Czerny.java takes an input n (an integer) and, for each pair of
 unary operations f and g on the set {0, 1, ..., n-1}, constructs an algebra
@@ -11,9 +12,9 @@ f and g are functions of one variable mapping the set {0,1,...,n-1} into itself)
 (This is equivalent to an automaton on n "states" and two "letters.")
 
 For each of these unary algebras, the program then constructs the free algebra on 
-one generator using Ralph Freese's FreeAlgebra Java class. The generator used
-is the element (0, 1, 2, ..., n-1).)   (See http://uacalc.org to learn more about
-the UACalc.) 
+one generator using the FreeAlgebra Java class (which is part of UACalc; see
+http://uacalc.org to learn more). . The generator used is the element (0, 1, 2,
+..., n-1).
 
 The set of terms of the resulting free algebra will consist of all the words
 produced by an automaton on n states using the letters f and g. 
