@@ -69,7 +69,12 @@ the output looks like:
     |F(1)| = 1417
     letters: (3, 0, 2, 4, 0),  (3, 2, 0, 1, 4)
 
-    Reset words:  g(f(f(g(f(g(f(g(x)))))))),  f(f(g(f(f(g(f(g(f(g(x)))))))))),  f(f(f(g(f(f(g(f(g(f(g(x))))))))))),  f(g(f(f(g(f(g(f(g(x))))))))),  g(f(g(f(f(g(f(g(f(g(x)))))))))),  
+    Reset words:  
+        g(f(f(g(f(g(f(g(x)))))))),  
+        f(f(g(f(f(g(f(g(f(g(x)))))))))),  
+        f(f(f(g(f(f(g(f(g(f(g(x))))))))))),  
+        f(g(f(f(g(f(g(f(g(x))))))))),  
+        g(f(g(f(f(g(f(g(f(g(x)))))))))),  
 
     Min reset length: 8      MaxMin reset length: 16
 
@@ -93,7 +98,12 @@ the output looks like:
     |F(1)| = 2110
     letters: (3, 0, 2, 4, 0),  (3, 2, 4, 1, 0)
 
-    Reset words:  g(f(g(g(f(f(f(g(f(g(x)))))))))),  f(f(g(f(g(g(f(f(f(g(f(g(x)))))))))))),  f(f(f(g(f(g(g(f(f(f(g(f(g(x))))))))))))),  f(g(f(g(g(f(f(f(g(f(g(x))))))))))),  g(f(g(f(g(g(f(f(f(g(f(g(x)))))))))))),  
+    Reset words:  
+        g(f(g(g(f(f(f(g(f(g(x)))))))))),  
+        f(f(g(f(g(g(f(f(f(g(f(g(x)))))))))))),  
+        f(f(f(g(f(g(g(f(f(f(g(f(g(x))))))))))))),  
+        f(g(f(g(g(f(f(f(g(f(g(x))))))))))),  
+        g(f(g(f(g(g(f(f(f(g(f(g(x)))))))))))),  
 
     Min reset length: 10      MaxMin reset length: 16
 
