@@ -1,67 +1,141 @@
 package automaton;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
+import org.uacalc.alg.op.Operation;
+import org.uacalc.alg.op.Operations;
+import org.uacalc.terms.Term;
+import org.uacalc.util.IntArray;
 
 public class Automaton {
-
-	private String name;
-	private int size;
-	private int state;  // the current state
-	private ArrayList<Operation> alphabet;
-	private Boolean isSynchronizing;
-	private ArrayList<Operation> resetWord;
 	
-	public Automaton(String name, int size, int state,
-			ArrayList<Operation> alphabet, Boolean isSynchronizing,
-			ArrayList<Operation> resetWord) {
-		super();
-		this.name = name;
-		this.size = size;
-		this.state = state;
-		this.alphabet = alphabet;
-		this.isSynchronizing = isSynchronizing;
-		this.resetWord = resetWord;
+	public class AlgebraSizeException extends Exception {
+
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 3202170856421987935L;
+
+		public AlgebraSizeException(String message) {
+			super(message);
+		}
 	}
 	
-	public String getName() {return name;}
-	public void setName(String name) {this.name = name;}
+	String name;
+	int size;
+	ArrayList<Operation> letters;
+	Set<IntArray> words;
+	boolean isSynchronizing;
+	Term minResetWord;
+	int minResetWordLength;
 
-	public int getSize() { return size;	}
-	public void setSize(int size) { this.size = size; }
+	public Automaton(String name) {
+		this.name = name;
+		letters = new ArrayList<Operation>();
+		words = null;
+		minResetWordLength=-1;
+	}
 
-	public int getState() {	return state; }
-	public void setState(int state) { this.state = state; }
+	public Automaton(String name, int size) {
+		this.name = name;
+		this.size = size;
+		letters = new ArrayList<Operation>();
+		words = null;
+		minResetWordLength=-1;
+	}
 
-	public ArrayList<Operation> getAlphabet() { return alphabet; }
-	public void setAlphabet(ArrayList<Operation> sigma) { this.alphabet = sigma; }
+	public Automaton(int n, List<Operation> unaryOps, Term minResetWord, int minReset, boolean sync) {
+		this.name = "unset";
+		this.size = n;
+		this.letters = (ArrayList<Operation>) unaryOps;
+		this.minResetWord = minResetWord;
+		this.minResetWordLength = minReset;
+		isSynchronizing=sync;
+	}
 
+	public String getName() {
+		return name;
+	}
 
-	public Boolean getIsSynchronizing() {
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getSize() {
+		return size;
+	}
+
+	public void setSize(int size) {
+		this.size = size;
+	}
+
+	public boolean isSynchronizing() {
 		return isSynchronizing;
 	}
 
-	public void setIsSynchronizing(Boolean isSynchronizing) {
+	public void setSynchronizing(boolean isSynchronizing) {
 		this.isSynchronizing = isSynchronizing;
 	}
 
-	public ArrayList<Operation> getResetWord() {
-		return resetWord;
+	public ArrayList<Operation> getLetters() {
+		return letters;
 	}
 
-	public void setResetWord(ArrayList<Operation> resetWord) {
-		this.resetWord = resetWord;
+	public Set<IntArray> getWords() {
+		return words;
 	}
-	
-	public Boolean transition(Operation f) throws IndexOutOfBoundsException {
-		if (state > -1 && state < f.getDomain()) {
-			setState(f.getValueAt(state));
-			return true;
-		} else  {
-			throw new IndexOutOfBoundsException("Current state is outside domain of the given transition function.");
-		}
+
+	public boolean addLetter(int n, int[] f) throws AlgebraSizeException {
+		//String name = Integer.toString(this.letters.size());
+		// TODO implement this method
+		return false;
 		
 	}
+
+	public boolean addLetter(String name, int n, int[] f) throws AlgebraSizeException {
+		if (n < getSize()){
+			throw new AlgebraSizeException("Operation is not of the correction size.");
+		} else if (n > getSize()) {
+			System.out.println("only using first" + getSize() + "elements of f"); 
+		}
+		return this.letters.add(Operations.makeIntOperation(name,1, getSize(), f));
+	}
 	
+	public Operation getLetterOperation(int k) {
+		return this.letters.get(k);
+	}
+	public int[] getLetterTable(int k) {
+		Operation fOp = getLetterOperation(k);
+		return fOp.getTable();
+		
+	}
+
+	public int getMinResetWordLength() {
+		return minResetWordLength;
+	}
+	
+	public String toString(){
+		String description = new String();
+		int[] table;
+//		description = "name: " + this.name 
+//				+ "\nletters: ";
+		description = "letters: ";
+		for (Operation letter : letters) {
+			table = letter.getTable();
+			description = description + "(";
+			int j = 0;
+			for (; j<(table.length-1); j++){ 
+				description = description + Integer.toString(table[j]) + ", ";
+			}
+			description = description + Integer.toString(table[j]) + "), ";
+		}
+		description = description + "\nmin reset word: " + minResetWord.toString();
+		description = description + "   (length " + Integer.toString(minResetWordLength) + ")\n";
+
+		return description;
+	}
 	
 	
 }

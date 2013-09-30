@@ -1,4 +1,4 @@
-package org.uacalc.example;
+package automaton;
 
 
 import java.util.ArrayList;

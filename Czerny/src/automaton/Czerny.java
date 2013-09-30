@@ -1,4 +1,4 @@
-package org.uacalc.example;
+package automaton;
 
 import org.uacalc.terms.Term;
 import org.uacalc.terms.Variable;
