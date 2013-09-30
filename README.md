@@ -5,15 +5,18 @@ This repository contains some Java classes for testing the Czerny Conjecture usi
 
 The main program in Czerny.java takes an input n (an integer) and, for each pair of
 unary operations f and g on the set {0, 1, ..., n-1}, constructs an algebra
-consisting of an n element universe and two unary operations, f and g.
+consisting of an n element universe and two unary operations, f and g (i.e.,
+maps from the set {0,1,...,n-1} to itself).
 
 (This is equivalent to an automaton on n "states" and two "letters.")
 
-The program then constructs, for each of these unary algebras, the free algebra on 
-one generator. (The generator used is the element (0, 1, 2, ..., n-1).)  
+For each of these unary algebras, the program then constructs the free algebra on 
+one generator using Ralph Freese's FreeAlgebra constructor. The generator used
+is the element (0, 1, 2, ..., n-1).)   (See http://uacalc.org to learn more about
+the UACalc.) 
 
-The point is that the set of terms of the resulting free algebra will consist of
-all the words produced by an automaton on n states using the letters f and g.
+The set of terms of the resulting free algebra will consist of all the words
+produced by an automaton on n states using the letters f and g. 
 
 The Czerny Conjecture states that if the automaton has a "reset word"
 (i.e., is "synchronizing", i.e. the free algebra has a constant term), 
