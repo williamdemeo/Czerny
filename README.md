@@ -1,7 +1,6 @@
 Czerny
 ======
-
-This repository contains some Java classes for testing the 
+This repository contains a Java program for testing the 
 [Czerny Conjecture](http://en.wikipedia.org/wiki/Synchronizing_word) 
 using Ralph Freese's FreeAlgebra class.
 
