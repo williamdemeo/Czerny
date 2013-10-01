@@ -39,7 +39,7 @@ The program also outputs the reset words for interesting (i.e. synchronizing) au
 
 Other Notes
 -----------
-In April 2013 I gave about this universal algebraic way of looking at
+In April 2013 I gave a lecture about this universal algebraic way of looking at
 synchronizing automata.  The slides are available [here](http://williamdemeo.files.wordpress.com/2012/12/cugradalgebraseminar.pdf).
 
 The Czerny Conjecture is a statement about all finite automata, even those
