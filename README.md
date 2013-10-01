@@ -11,6 +11,11 @@ f and g are functions of one variable mapping the set {0,1,...,n-1} into itself)
 
 (This is equivalent to an automaton on n "states" and two "letters.")
 
+Actually, the program doesn't consider *all* pairs of maps, f and g, but rather 
+those pairs for which f is a permutation and g has rank n-1.  The rank of g, which is
+the size of the range of g (i.e., the number of blocks in the kernel), is an optional 
+input parameter of the program.
+
 For each of these unary algebras, the program then constructs the free algebra on 
 one generator using the FreeAlgebra Java class (which is part of UACalc; see
 http://uacalc.org to learn more). The generator used is the element (0, 1, 2,
