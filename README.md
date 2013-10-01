@@ -65,7 +65,9 @@ maps on n grows exponentially, so even if the algorithm does nothing inside the
 loop, it will take a long time for large n.   
 
 Probably a better way to improve the algorithm is to think of smart ways to thin
-the set of candidate pairs of unary maps.
+the set of candidate pairs of unary maps.  Currently, the default is to look only
+at functions f, g, with f a permutation and g a map from {0,1,...,n-1} onto a set 
+of size n-1.
 
 
 Sample Output
